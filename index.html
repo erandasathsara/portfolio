@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Eranda Sathsara Abewardhana</title>
+    <title>🅴 Eranda Sathsara Abewardhana</title> <!-- Using Unicode character or you can use an emoji -->
     <script src="https://kit.fontawesome.com/1e5f268383.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="Images/letter-e.png">
 
 </head>
 
@@ -397,30 +398,33 @@
                         0764874820
                     </p>
                     <div class="social-icon">
-                        <a href="https://www.facebook.com/YourPage" target="_blank">
+                        <a href="https://www.facebook.com/erandasathsara.abewardhana/" target="_blank">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/YourProfile" target="_blank">
+                        <a href="https://www.linkedin.com/in/eranda-abewardhana-6a71bb199/" target="_blank">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://www.instagram.com/YourProfile" target="_blank">
+                        <a href="https://www.instagram.com/__xexndx____/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://twitter.com/YourUsername" target="_blank">
+                        <a href="https://twitter.com/Eranda_Sathsara" target="_blank">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://github.com/YourUsername" target="_blank">
+                        <a href="https://github.com/erandasathsara" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
 
                     </div>
                     <a href="Cv/Eranda sathsara abewardhana CV2.pdf" download class="btn btn2">Download CV</a>
                 </div>
-                <div class="contact-right">
-                    <div id="success-message-form" style="display: none;">
+                <div class="contact-right">                 
+
+                    <div id="success-message" style="display: none;color: green;">
                         Message Sent Successfully
                     </div>
-
+                    <div id="error-message" style="display: none;color: red;">
+                        Message not Sent Successfully
+                    </div>
                     <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name">
                         <input type="email" name="Email" placeholder="Your Email">
@@ -428,6 +432,7 @@
                         <button class="btn btn2" type="submit">
                             Submit
                         </button>
+                        
                     </form>
                 </div>
             </div>
@@ -439,9 +444,10 @@
         </div>
     </div>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbztxBxjXkaqInsW1DtINx-840-w8-oCeo5fT3wFxUDL_GVQsii0wMLRiqQ7SC-kiTaurQ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwLbv89u_tdpzQg05Gyc9kZcMOOfDSPesLE-zbf24k993ZzSkaAJe7HSM5LnLd2yeNS/exec';
         const form = document.forms['submit-to-google-sheet'];
         const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -456,13 +462,22 @@
                     form.reset();
                     // Display success message
                     successMessage.style.display = 'block';
+                    successMessage.style.color = 'green';
+                    successMessage.style.marginLeft = '10vw';
+                    errorMessage.style.display = 'none'; // Hide error message
                 } else {
                     console.error('Error!', response);
+                    // Display error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.style.color = 'red';
+                    errorMessage.style.marginLeft = '10vw';
+                    successMessage.style.display = 'none'; // Hide success message
                 }
             } catch (error) {
                 console.error('Error!', error.message);
             }
         });
+
 
     </script>
 
